@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <report
+            id="report_hr_complaint"
+            string="Complaint"
+            model="hr_complaint.complaint"
+            report_type="qweb-html"
+            name="hr_complaint.report_hr_complaint_template"
+        />
+
+        <template id="report_hr_complaint_template">
+            <t t-call="report.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="report.external_layout">
+                    <div class="page">
+                        <h2>Employee Complaint Record</h2>
+                        <h3>Details</h3>
+                        <table>
+                        <tr>
+						<td>Employee Name:</td>
+                        <td><span t-field="o.employee_id" /></td>
+                        </tr>
+                        <tr>
+						<td>Date of Complaint:</td>
+                        <td><span t-field="o.complaint_date" /></td>
+                        </tr>
+                        <tr>
+                        <td>Status:</td>
+                        <td><span t-field="o.state"/></td>
+                        </tr>
+                        <tr>
+						<td>Method of Complaint:</td>
+                        <td><span t-field="o.complaint_mode" /></td>
+                        </tr>
+                        <tr>
+						<td>Type of Complaint:</td>
+                        <td><span t-field="o.complaint_type" /></td>
+                        </tr>
+                        <tr>
+						<td>Complaint Source:</td>
+                        <td><span t-field="o.complaint_source" /> <span t-field="o.complaint_source_text"/></td>
+                        </tr>
+                        <tr>
+						<td colspan="2">Outline of Complaint</td>
+						</tr>
+						<tr>
+                        <td colspan="2"><span t-field="o.complaint_outline" /></td>
+                        </tr>
+                        <tr>
+						<td>Evidence:</td>
+                        <td><span t-field="o.complaint_evidence" /></td>
+                        </tr>
+                        <tr>
+						<td>Witnesses:</td>
+                        <td><span t-field="o.complaint_witnesses" /></td>
+                        </tr>
+                        <tr>
+						<td>Recorded By:</td>
+                        <td><span t-field="o.recorded_by" /></td>
+                        </tr>
+                        <tr>
+                        <td colspan="2"><h3>Assessment</h3></td>
+                        </tr>
+                        <tr>
+                        <td>Seriousness:</td>
+                        <td><span t-field="o.complaint_assessment"/></td>
+                        </tr>
+                        <tr>
+                        <td>Does the complaint contain allegations of:</td>
+                        <td><table>
+						<tr>
+							<td>Stealing:</td>
+							<td><span t-if="o.stealing">&#9745;</span><span t-if="not o.stealing">&#9744;</span><br/></td>
+						</tr>
+						<tr>
+							<td>Fraud:</td>
+							<td><span t-if="o.fraud">&#9745;</span><span t-if="not o.fraud">&#9744;</span><br/></td>
+						</tr>
+						<tr>
+							<td>Threats and/or violence:</td>
+							<td><span t-if="o.violence">&#9745;</span><span t-if="not o.violence">&#9744;</span><br/></td>
+						</tr>
+                        <tr>
+							<td>Safety breaches:</td>
+							<td><span t-if="o.safety">&#9745;</span><span t-if="not o.safety">&#9744;</span><br/></td>
+                        </tr>
+                        <tr>
+                        <td>Discrimination:</td>
+                        <td><span t-if="o.discrimination">&#9745;</span><span t-if="not o.discrimination">&#9744;</span></td>
+                        </tr>
+                        </table></td>
+                        </tr>
+                        <tr>
+                        <td>Does the complaint indicate:</td>
+                        <td>
+						<table>
+						<tr>
+							<td>Any breach of Contract/Policy:</td>
+							<td><span t-if="o.policy">&#9745;</span><span t-if="not o.policy">&#9744;</span><br/></td>
+						</tr>
+						<tr>
+							<td>Any breach of the company's contract with clients</td>
+							<td><span t-if="o.client_contract">&#9745;</span><span t-if="not o.client_contract">&#9744;</span><br/></td>
+						</tr>
+						<tr>
+							<td>Refusal to follow reasonable directions</td>
+							<td><span t-if="o.directions">&#9745;</span><span t-if="not o.directions">&#9744;</span><br/></td>
+						</tr>
+                        <tr>
+							<td>Unsatisfactory performance:</td>
+							<td><span t-if="o.performance">&#9745;</span><span t-if="not o.performance">&#9744;</span><br/></td>
+                        </tr>
+                        <tr>
+							<td>Inappropriate behaviour:</td>
+							<td><span t-if="o.behaviour">&#9745;</span><span t-if="not o.behaviour">&#9744;</span></td>
+                        </tr>
+                        <tr>
+							<td>Misuse of company property:</td>
+							<td><span t-if="o.property">&#9745;</span><span t-if="not o.property">&#9744;</span></td>
+                        </tr>
+                        </table>
+                        </td>
+                        </tr>
+                        <tr>
+                        <td>Is there sufficient evidence to investigate the complaint?</td>
+                        <td><span t-if="o.evidence_sufficient">Yes</span><span t-if="not o.evidence_sufficient">No</span></td>
+                        </tr>
+                        <tr>
+                        <td>Does the complaint require investigation?</td>
+                        <td><span t-field="o.investigation_required"/></td>
+                        </tr>                
+                        <tr>
+                        <td>Does the complaint have to be referred to another organisation?</td>
+                        <td><span t-if="o.complaint_refer">Yes</span><span t-if="not o.complaint_refer">No</span></td>
+                        </tr>
+                        <tr>
+                        <td>Investigation Plan:</td>
+                        <td><span t-field="o.investigation_plan"/></td>
+                        </tr>
+                        <tr>
+                        <td>Assigned to:</td>
+                        <td><span t-field="o.assigned_to"/></td>
+                        </tr>
+                        <tr>
+                        <td>Assessed by:</td>
+                        <td><span t-field="o.assessor"/></td>
+                        </tr>
+                        <tr>
+                        <td>Date assessed:</td>
+                        <td><span t-field="o.assess_date"/></td>
+                        </tr>
+                        <tr><td colspan="2"><h3>Action</h3></td></tr>
+                        <tr>
+                        <td>Has the complaint been substantiated?</td>
+                        <td><span t-if="o.substantiated">Yes</span><span t-if="not o.substantiated">No</span></td>
+                        </tr>
+                        <tr>
+                        <td>Details:</td>
+                        <td><span t-field="o.action_detail"/></td>
+                        </tr>
+                        <tr>
+                        <td>Issues discovered:</td>
+                        <td><span t-field="o.issues"/></td>
+                        </tr>
+                        <tr>
+                        <td>Action to be taken:</td>
+                        <td><span t-field="o.action_taken"/></td>
+                        </tr>
+                        <tr>
+                        <td>Record on Employee File:</td>
+                        <td><span t-if="o.record_employee">Yes</span><span t-if="not o.record_employee">No</span></td>
+                        </tr>
+                        <tr>
+                        <td>Completed by:</td>
+                        <td><span t-field="o.completed_by"/></td>
+                        </tr>
+                        <tr>
+                        <td>Date Closed:</td>
+                        <td><span t-field="o.date_close"/></td>
+                        </tr>
+                        </table>
+                        <h3>Running Entries</h3>
+                        <table width="100%">
+						<t t-set="i" t-value="0"/>
+                        <t t-foreach="o.message_ids" t-as="m">
+						<t t-set="i" t-value="i+1"/>
+						<t t-if="i > 1">
+							<tr><td colspan="4"><hr/></td></tr>
+						</t>	
+                        <tr>
+                        <td>Author:</td>
+                        <td><span t-field="m.author_id"/></td>
+                        <td>Date:</td>
+                        <td><span t-field="m.date"/></td>
+                        </tr>
+                        <tr>
+                        <td colspan="2">Subject:  </td>
+                        <td colspan="2"><span t-field="m.subject"/></td>
+                        </tr>
+                        <tr>
+                        <td colspan="4">Details:</td>
+                        </tr>
+                        <tr>
+                        <td colspan="4"><span t-field="m.body"/></td></tr>
+                        </t>
+                        </table>
+                        <br/><br/>
+                        <table width="100%">
+                        <tr height="40px">
+                        <td>Signature:</td>
+                        <td><hr/></td>
+                        <td>Date:</td>
+                        <td><hr/></td>
+                        </tr>
+                        
+                        </table>
+                    </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</openerp>
