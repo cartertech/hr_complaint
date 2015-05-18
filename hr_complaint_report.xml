@@ -6,7 +6,7 @@
             id="report_hr_complaint"
             string="Complaint"
             model="hr_complaint.complaint"
-            report_type="qweb-html"
+            report_type="qweb-pdf"
             name="hr_complaint.report_hr_complaint_template"
         />
 
