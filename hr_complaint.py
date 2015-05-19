@@ -123,3 +123,18 @@ class hr_complaint(osv.Model):
         'date': lambda *a: (parser.parse(datetime.now().strftime('%Y-%m-%d')) + relativedelta(months=+1)).strftime('%Y-%m-%d'),
         'state': lambda *a: 'draft',
     }
+
+class hr_employee(osv.Model):
+    _name = "hr.employee"
+    _inherit="hr.employee"
+    
+    def _complaint_count(self, cr, uid, ids, field_name, arg, context=None):
+        Complaint = self.pool['hr_complaint.complaint']
+        return {
+            employee_id: Complaint.search_count(cr, uid, [('employee_id', '=', employee_id)], context=context)
+            for employee_id in ids
+        }
+
+    _columns = {
+         'complaint_count': fields.function(_complaint_count, type='integer', string='Complaints'),
+    }
