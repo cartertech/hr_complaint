@@ -35,6 +35,7 @@ Creates forms and reports for reporting complaints against employees
     "data": [
         'hr_complaint_view.xml',
         'hr_complaint_report.xml',
+        'security/ir.model.access.csv',
     ],
     'auto_install': False,
     'installable': True,

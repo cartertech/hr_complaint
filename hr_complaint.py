@@ -114,7 +114,7 @@ class hr_complaint(osv.Model):
             ('insufficient', 'Insufficient Evidence'),
             ('progress', 'Investigation in progress'),
             ('wait', 'Waiting for external investigation'),
-            ('investigate','Under Investigation'),
+            ('unsubstantiated','Unsubstantiated'),
             ('done', 'Done')], 'Status', required=True, readonly=True, track_visibility='onchange', copy=False),
 	'date_eta': fields.date('To be completed'),
     'date_close': fields.date('Date closed', select=True),
@@ -123,6 +123,8 @@ class hr_complaint(osv.Model):
         'date': lambda *a: (parser.parse(datetime.now().strftime('%Y-%m-%d')) + relativedelta(months=+1)).strftime('%Y-%m-%d'),
         'state': lambda *a: 'draft',
     }
+    
+    _order = 'complaint_date desc'
 
 class hr_employee(osv.Model):
     _name = "hr.employee"

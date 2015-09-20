@@ -9,7 +9,7 @@
             <field name="arch" type="xml">
                 <form string="Complaint">
 					<header>
-						<field name="state" widget="statusbar" statusbar_visible="draft,insufficient,progress,wait,investigate,done" clickable="True"/>
+						<field name="state" widget="statusbar" statusbar_visible="draft,insufficient,progress,wait,unsubstantiated,done" clickable="True"/>
 					</header>
                     <sheet>
 						<group>
