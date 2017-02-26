@@ -19,25 +19,5 @@
 #
 ##############################################################################
 
-{
-    'name': 'Employee Complaints',
-    'version': '0.1',
-    'author': 'One Click Software',
-    'category': 'Human Resources',
-    'website': 'http://oneclick.solutions',
-    'summary': 'Performance Management, Complaints,',
-    'depends': ['hr', 'mail', 'calendar'],
-    'description': """
-Employee Complaint Record
-==========================
-Creates forms and reports for reporting complaints against employees
-""",
-    "data": [
-        'hr_complaint_view.xml',
-        'hr_complaint_report.xml',
-        'security/ir.model.access.csv',
-    ],
-    'auto_install': False,
-    'installable': True,
-    'application': False,
-}
+import hr_complaint
+

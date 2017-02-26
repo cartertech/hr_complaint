@@ -20,9 +20,6 @@
 ##############################################################################
 
 from datetime import date
-#from dateutil.relativedelta import relativedelta
-#from dateutil import parser
-
 
 from odoo import api, fields, models
 from openerp.tools.translate import _

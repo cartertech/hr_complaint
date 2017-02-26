@@ -19,7 +19,25 @@
 #
 ##############################################################################
 
-import models
-
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
-
+{
+    'name': 'Employee Complaints',
+    'version': '0.2',
+    'author': 'One Click Software',
+    'category': 'Human Resources',
+    'website': 'http://oneclick.solutions',
+    'summary': 'Performance Management, Complaints,',
+    'depends': ['hr', 'mail', 'calendar'],
+    'description': """
+Employee Complaint Record
+==========================
+Creates forms and reports for reporting complaints against employees
+""",
+    "data": [
+        'views/hr_complaint_view.xml',
+        'report/hr_complaint_report.xml',
+        'security/ir.model.access.csv',
+    ],
+    'auto_install': False,
+    'installable': True,
+    'application': False,
+}
