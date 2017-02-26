@@ -14,8 +14,8 @@
                     <sheet>
 						<group>
 						<field name="name" invisible="1"/>
-                        <field name="employee_id" on_change="onchange_complaint(employee_id,complaint_date)"/>
-                        <field name="complaint_date" on_change="onchange_complaint(employee_id,complaint_date)"/>
+                        <field name="employee_id"/>
+                        <field name="complaint_date"/>
                         <field name="complaint_mode"/>
                         <field name="complaint_type"/>
                         <field name="complaint_source"/>
