@@ -21,7 +21,7 @@
 
 {
     'name': 'Employee Complaints',
-    'version': '0.2',
+    'version': '0.3',
     'author': 'One Click Software',
     'category': 'Human Resources',
     'website': 'http://oneclick.solutions',
