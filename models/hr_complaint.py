@@ -31,7 +31,7 @@ class HrComplaint(models.Model):
 	_inherit = "mail.thread"
 			
 	name = fields.Char("Name")
-	complaint_date = fields.Date("Date of Complaint", required=True, select=True, default=date.today())
+	complaint_date = fields.Date("Date of Complaint", required=True, default=date.today())
 	employee_id = fields.Many2one('hr.employee', "Employee", required=True)
 	complaint_mode = fields.Selection([
             ('0', 'Telephone'),
@@ -100,7 +100,7 @@ class HrComplaint(models.Model):
             ('unsubstantiated','Unsubstantiated'),
             ('done', 'Done')], 'Status', required=True, readonly=True, track_visibility='onchange', copy=False, default='draft')
 	date_eta = fields.Date('To be completed')
-	date_close = fields.Date('Date closed', select=True)
+	date_close = fields.Date('Date closed')
     
 	@api.onchange('employee_id','complaint_date')
 	def change_complaint(self):
