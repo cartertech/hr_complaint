@@ -14,9 +14,9 @@
                 <t t-foreach="docs" t-as="o">
                     <t t-call="web.external_layout">
                     <div class="page">
-                        <h2>Employee Complaint Record</h2>
-                        <h3>Details</h3>
-                        <div class="row">
+                        <center><h2 style="font-size: 1.75rem!important;">Employee Complaint Record</h2></center>
+                        <h3 style="font-size: 1.5rem!important;">Details</h3>
+                        <div class="row" style="page-break-inside: avoid!important;">
 							<div class="col-4">
 								Employee Name:
 							</div>
@@ -24,7 +24,7 @@
 								<span t-field="o.employee_id" />
 							</div>
 						</div>
-                        <div class="row">
+                        <div class="row" style="page-break-inside: avoid!important;">
 							<div class="col-4">
 								Date of Complaint:
 							</div>
@@ -32,7 +32,7 @@
 								<span t-field="o.complaint_date" />
 							</div>
 						</div>
-                        <div class="row">
+                        <div class="row" style="page-break-inside: avoid!important;">
 							<div class="col-4">
 								Status:
 							</div>
@@ -40,7 +40,7 @@
 								<span t-field="o.state"/>
 							</div>
 						</div>
-                        <div class="row">
+                        <div class="row" style="page-break-inside: avoid!important;">
 							<div class="col-4">
 								Method of Complaint:
 							</div>
@@ -48,7 +48,7 @@
 								<span t-field="o.complaint_mode" />
 							</div>
 						</div>
-                        <div class="row">
+                        <div class="row" style="page-break-inside: avoid!important;">
 							<div class="col-4">
 								Type of Complaint:
 							</div>
@@ -56,7 +56,7 @@
 								<span t-field="o.complaint_type" />
 							</div>
                         </div>
-                        <div class="row">
+                        <div class="row" style="page-break-inside: avoid!important;">
 							<div class="col-4">
 								Complaint Source:
 							</div>
@@ -64,17 +64,17 @@
 								<span t-field="o.complaint_source" /> - <span t-field="o.complaint_source_text"/>
 							</div>
                         </div>
-                        <div class="row">
+                        <div class="row" style="page-break-inside: avoid!important;">
 							<div class="col">
 								Outline of Complaint
 							</div>
 						</div>
-						<div class="row">
+						<div class="row" style="page-break-inside: avoid!important;">
 							<div class="col">
 								<span t-field="o.complaint_outline" />
 							</div>
                         </div>
-                        <div class="row">
+                        <div class="row" style="page-break-inside: avoid!important;">
 							<div class="col-4">
 								Evidence:
 							</div>
@@ -82,7 +82,7 @@
 								<span t-field="o.complaint_evidence" />
 							</div>
                         </div>
-                        <div class="row">
+                        <div class="row" style="page-break-inside: avoid!important;">
 							<div class="col-4">
 								Witnesses:
 							</div>
@@ -90,7 +90,7 @@
 								<span t-field="o.complaint_witnesses" />
 							</div>
                         </div>
-                        <div class="row">
+                        <div class="row" style="page-break-inside: avoid!important;">
 							<div class="col-4">
 								Recorded By:
 							</div>
@@ -98,12 +98,12 @@
 								<span t-field="o.recorded_by" />
 							</div>
                         </div>
-                        <div class="row">
+                        <div class="row" style="page-break-inside: avoid!important;">
 							<div class="col">
-								<h3>Assessment</h3>
+								<h3 style="font-size: 1.5rem!important;">Assessment</h3>
 							</div>
                         </div>
-                        <div class="row">
+                        <div class="row" style="page-break-inside: avoid!important;">
 							<div class="col-4">
 								Seriousness:
 							</div>
@@ -111,6 +111,7 @@
 								<span t-field="o.complaint_assessment"/>
 							</div>
                         </div>
+						<div style="page-break-inside: avoid!important;">
                         <div class="row">
 							<div class="col">
 								Does the complaint contain allegations of:
@@ -161,6 +162,8 @@
 								<span t-if="o.discrimination">&#9745;</span><span t-if="not o.discrimination">&#9744;</span>
 							</div>
 						</div>
+						</div>
+						<div style="page-break-inside: avoid!important;">
 						<div class="row">
 							<div class="col">
 								Does the complaint indicate:
@@ -220,7 +223,8 @@
 								<span t-if="o.property">&#9745;</span><span t-if="not o.property">&#9744;</span>
 							</div>
                         </div>
-                        <div class="row">
+						</div>
+                        <div class="row" style="page-break-inside: avoid!important;">
 							<div class="col-4">
 								Is there sufficient evidence to investigate the complaint?
 							</div>
@@ -228,7 +232,7 @@
 								<span t-if="o.evidence_sufficient">Yes</span><span t-if="not o.evidence_sufficient">No</span>
 							</div>
 						</div>
-						<div class="row">
+						<div class="row" style="page-break-inside: avoid!important;">
 							<div class="col-4">
 								Does the complaint require investigation?
 							</div>
@@ -236,7 +240,7 @@
 								<span t-field="o.investigation_required"/>
 							</div>
 						</div>
-						<div class="row">
+						<div class="row" style="page-break-inside: avoid!important;">
 							<div class="col-4">
 								Does the complaint have to be referred to another organisation?
 							</div>
@@ -244,7 +248,7 @@
 								<span t-if="o.complaint_refer">Yes</span><span t-if="not o.complaint_refer">No</span>
 							</div>
 						</div>
-                        <div class="row">
+                        <div class="row" style="page-break-inside: avoid!important;">
 							<div class="col-4">
 								Investigation Plan:
 							</div>
@@ -252,7 +256,7 @@
 								<span t-field="o.investigation_plan"/>
 							</div>
 						</div>
-                        <div class="row">
+                        <div class="row" style="page-break-inside: avoid!important;">
 							<div class="col-4">
 								Assigned to:
 							</div>
@@ -260,7 +264,7 @@
 								<span t-field="o.assigned_to"/>
 							</div>
 						</div>
-						<div class="row">
+						<div class="row" style="page-break-inside: avoid!important;">
 							<div class="col-4">
 								Assessed by:
 							</div>
@@ -268,7 +272,7 @@
 								<span t-field="o.assessor"/>
 							</div>
 						</div>
-						<div class="row">
+						<div class="row" style="page-break-inside: avoid!important;">
 							<div class="col-4">
 								Date assessed:
 							</div>
@@ -276,20 +280,20 @@
 								<span t-field="o.assess_date"/>
 							</div>
 						</div>
-                        <div class="row">
+                        <div class="row" style="page-break-inside: avoid!important;">
 							<div class="col">
-								<h3>Action</h3>
+								<h3 style="font-size: 1.5rem!important;">Action</h3>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-4">
+							<div class="col-4" style="page-break-inside: avoid!important;">
 								Has the complaint been substantiated?
 							</div>
 							<div class="col-8">
 								<span t-if="o.substantiated">Yes</span><span t-if="not o.substantiated">No</span>
 							</div>
 						</div>
-                        <div class="row">
+                        <div class="row" style="page-break-inside: avoid!important;">
 							<div class="col-4">
 								Details:
 							</div>
@@ -297,7 +301,7 @@
 								<span t-field="o.action_detail"/>
 							</div>
 						</div>
-						<div class="row">
+						<div class="row" style="page-break-inside: avoid!important;">
 							<div class="col-4">
 								Issues discovered:
 							</div>
@@ -305,7 +309,7 @@
 								<span t-field="o.issues"/>
 							</div>
 						</div>
-						<div class="row">
+						<div class="row" style="page-break-inside: avoid!important;">
 							<div class="col-4">
 								Action to be taken:
 							</div>
@@ -313,7 +317,7 @@
 								<span t-field="o.action_taken"/>
 							</div>
 						</div>
-						<div class="row">
+						<div class="row" style="page-break-inside: avoid!important;">
 							<div class="col-4">
 								Record on Employee File:
 							</div>
@@ -321,7 +325,7 @@
 								<span t-if="o.record_employee">Yes</span><span t-if="not o.record_employee">No</span>
 							</div>
                         </div>
-                        <div class="row">
+                        <div class="row" style="page-break-inside: avoid!important;">
 							<div class="col-4">
 								Completed by:
 							</div>
@@ -329,56 +333,47 @@
 								<span t-field="o.completed_by"/>
 							</div>
 						</div>
-						<div class="row">
+						<div class="row" style="page-break-inside: avoid!important;">
 							<div class="col-4">
 								Date Closed:
 							</div>
 							<div class="col-8">
-								<span t-field="o.date_close"/>
+								<div t-if="o.date_close"><span t-field="o.date_close"/></div><div t-if="not o.date_close">OPEN</div>
 							</div>
 						</div>
-                        <h3>Running Entries</h3>
-						<t t-set="i" t-value="0"/>
-                        <t t-foreach="o.message_ids" t-as="m">
-						<t t-set="i" t-value="i+1"/>
-						<t t-if="i > 1">
-							<hr/>
-						</t>	
-                        <div class="row">
-						<div class="col-2">
-							Author:
-						</div>
-						<div class="col-4">
-							<span t-field="m.author_id"/>
-						</div>
-						<div class="col-2">
-							Date:
-						</div>
-						<div class="col-4">
-							<span t-field="m.date"/>
-                        </div>
-						</div>
-                        <div class="row">
-                        <div class="col-3">
-							Subject:
-						</div>
-						<div class="col-9">
-							<span t-field="m.subject"/>
-						</div>
-                        </div>
-                        <div class="row">
-							<div class="col">
-								Details:
-							</div>
-						</div>
-						<div class="row">
-							<div class="col">
-								<span t-field="m.body"/>
-							</div>
-						</div>
-                        </t>
+                        <h3 style="font-size: 1.5rem!important;">Running Entries</h3>
+                        <table>
+							<t t-set="i" t-value="0"/>
+                            <t t-foreach="o.message_ids" t-as="msg">
+							<t t-set="i" t-value="i+1"/>
+								<t t-if="i > 1">
+								<tr><td colspan="2"><hr/></td></tr>
+							</t>	
+                                <tr>
+                                    <td style="padding-right: 1cm; font-weight:bold;">
+                                        <span t-field="msg.author_id"/><br/>
+                                        <div style="font-size:75%; padding-left: 3mm;">
+                                            (<span t-field="msg.date"/>)
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div t-if="msg.subject"><span t-field="msg.subject"/>: </div>
+                                        <div t-if="msg.message_type == 'notification'">
+                                            <span t-field="msg.subtype_id.name"/>
+                                            <t t-foreach='msg.sudo().tracking_value_ids' t-as='value'>
+                                                <li>
+                                                    <t t-esc="value.field_desc"/>:
+                                                    <span> <t t-esc="value.new_value_char"/> </span>
+                                                </li>
+                                            </t>
+                                        </div>
+                                        <span t-field="msg.body"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </table>
                         <br/><br/>
-                        <div class="row">
+                        <div class="row" style="page-break-inside: avoid!important;">
 							<div class="col-2">
 								Signature:
 							</div>

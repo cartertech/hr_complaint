@@ -43,6 +43,7 @@
 						  <field name="property"/>
 						</group>
 					  <group string="Action Plan">
+						  <field name="investigation_required"/>
 						  <field name="evidence_sufficient"/>
 						  <field name="complaint_refer"/>
 						  <field name="investigation_plan"/>
