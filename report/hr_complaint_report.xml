@@ -17,205 +17,380 @@
                     <div class="page">
                         <h2>Employee Complaint Record</h2>
                         <h3>Details</h3>
-                        <table>
-                        <tr>
-						<td>Employee Name:</td>
-                        <td><span t-field="o.employee_id" /></td>
-                        </tr>
-                        <tr>
-						<td>Date of Complaint:</td>
-                        <td><span t-field="o.complaint_date" /></td>
-                        </tr>
-                        <tr>
-                        <td>Status:</td>
-                        <td><span t-field="o.state"/></td>
-                        </tr>
-                        <tr>
-						<td>Method of Complaint:</td>
-                        <td><span t-field="o.complaint_mode" /></td>
-                        </tr>
-                        <tr>
-						<td>Type of Complaint:</td>
-                        <td><span t-field="o.complaint_type" /></td>
-                        </tr>
-                        <tr>
-						<td>Complaint Source:</td>
-                        <td><span t-field="o.complaint_source" /> <span t-field="o.complaint_source_text"/></td>
-                        </tr>
-                        <tr>
-						<td colspan="2">Outline of Complaint</td>
-						</tr>
-						<tr>
-                        <td colspan="2"><span t-field="o.complaint_outline" /></td>
-                        </tr>
-                        <tr>
-						<td>Evidence:</td>
-                        <td><span t-field="o.complaint_evidence" /></td>
-                        </tr>
-                        <tr>
-						<td>Witnesses:</td>
-                        <td><span t-field="o.complaint_witnesses" /></td>
-                        </tr>
-                        <tr>
-						<td>Recorded By:</td>
-                        <td><span t-field="o.recorded_by" /></td>
-                        </tr>
-                        <tr>
-                        <td colspan="2"><h3>Assessment</h3></td>
-                        </tr>
-                        <tr>
-                        <td>Seriousness:</td>
-                        <td><span t-field="o.complaint_assessment"/></td>
-                        </tr>
-                        <tr>
-                        <td>Does the complaint contain allegations of:</td>
-                        <td><table>
-						<tr>
-							<td>Stealing:</td>
-							<td><span t-if="o.stealing">&#9745;</span><span t-if="not o.stealing">&#9744;</span><br/></td>
-						</tr>
-						<tr>
-							<td>Fraud:</td>
-							<td><span t-if="o.fraud">&#9745;</span><span t-if="not o.fraud">&#9744;</span><br/></td>
-						</tr>
-						<tr>
-							<td>Threats and/or violence:</td>
-							<td><span t-if="o.violence">&#9745;</span><span t-if="not o.violence">&#9744;</span><br/></td>
-						</tr>
-                        <tr>
-							<td>Safety breaches:</td>
-							<td><span t-if="o.safety">&#9745;</span><span t-if="not o.safety">&#9744;</span><br/></td>
-                        </tr>
-                        <tr>
-                        <td>Discrimination:</td>
-                        <td><span t-if="o.discrimination">&#9745;</span><span t-if="not o.discrimination">&#9744;</span></td>
-                        </tr>
-                        </table></td>
-                        </tr>
-                        <tr>
-                        <td>Does the complaint indicate:</td>
-                        <td>
-						<table>
-						<tr>
-							<td>Any breach of Contract/Policy:</td>
-							<td><span t-if="o.policy">&#9745;</span><span t-if="not o.policy">&#9744;</span><br/></td>
-						</tr>
-						<tr>
-							<td>Any breach of the company's contract with clients</td>
-							<td><span t-if="o.client_contract">&#9745;</span><span t-if="not o.client_contract">&#9744;</span><br/></td>
-						</tr>
-						<tr>
-							<td>Refusal to follow reasonable directions</td>
-							<td><span t-if="o.directions">&#9745;</span><span t-if="not o.directions">&#9744;</span><br/></td>
-						</tr>
-                        <tr>
-							<td>Unsatisfactory performance:</td>
-							<td><span t-if="o.performance">&#9745;</span><span t-if="not o.performance">&#9744;</span><br/></td>
-                        </tr>
-                        <tr>
-							<td>Inappropriate behaviour:</td>
-							<td><span t-if="o.behaviour">&#9745;</span><span t-if="not o.behaviour">&#9744;</span></td>
-                        </tr>
-                        <tr>
-							<td>Misuse of company property:</td>
-							<td><span t-if="o.property">&#9745;</span><span t-if="not o.property">&#9744;</span></td>
-                        </tr>
-                        </table>
-                        </td>
-                        </tr>
-                        <tr>
-                        <td>Is there sufficient evidence to investigate the complaint?</td>
-                        <td><span t-if="o.evidence_sufficient">Yes</span><span t-if="not o.evidence_sufficient">No</span></td>
-                        </tr>
-                        <tr>
-                        <td>Does the complaint require investigation?</td>
-                        <td><span t-field="o.investigation_required"/></td>
-                        </tr>                
-                        <tr>
-                        <td>Does the complaint have to be referred to another organisation?</td>
-                        <td><span t-if="o.complaint_refer">Yes</span><span t-if="not o.complaint_refer">No</span></td>
-                        </tr>
-                        <tr>
-                        <td>Investigation Plan:</td>
-                        <td><span t-field="o.investigation_plan"/></td>
-                        </tr>
-                        <tr>
-                        <td>Assigned to:</td>
-                        <td><span t-field="o.assigned_to"/></td>
-                        </tr>
-                        <tr>
-                        <td>Assessed by:</td>
-                        <td><span t-field="o.assessor"/></td>
-                        </tr>
-                        <tr>
-                        <td>Date assessed:</td>
-                        <td><span t-field="o.assess_date"/></td>
-                        </tr>
-                        <tr><td colspan="2"><h3>Action</h3></td></tr>
-                        <tr>
-                        <td>Has the complaint been substantiated?</td>
-                        <td><span t-if="o.substantiated">Yes</span><span t-if="not o.substantiated">No</span></td>
-                        </tr>
-                        <tr>
-                        <td>Details:</td>
-                        <td><span t-field="o.action_detail"/></td>
-                        </tr>
-                        <tr>
-                        <td>Issues discovered:</td>
-                        <td><span t-field="o.issues"/></td>
-                        </tr>
-                        <tr>
-                        <td>Action to be taken:</td>
-                        <td><span t-field="o.action_taken"/></td>
-                        </tr>
-                        <tr>
-                        <td>Record on Employee File:</td>
-                        <td><span t-if="o.record_employee">Yes</span><span t-if="not o.record_employee">No</span></td>
-                        </tr>
-                        <tr>
-                        <td>Completed by:</td>
-                        <td><span t-field="o.completed_by"/></td>
-                        </tr>
-                        <tr>
-                        <td>Date Closed:</td>
-                        <td><span t-field="o.date_close"/></td>
-                        </tr>
-                        </table>
+                        <div class="row">
+							<div class="col-4">
+								Employee Name:
+							</div>
+							<div class="col-8">
+								<span t-field="o.employee_id" />
+							</div>
+						</div>
+                        <div class="row">
+							<div class="col-4">
+								Date of Complaint:
+							</div>
+							<div class="col-8">
+								<span t-field="o.complaint_date" />
+							</div>
+						</div>
+                        <div class="row">
+							<div class="col-4">
+								Status:
+							</div>
+							<div class="col-8">
+								<span t-field="o.state"/>
+							</div>
+						</div>
+                        <div class="row">
+							<div class="col-4">
+								Method of Complaint:
+							</div>
+							<div class="col-8">
+								<span t-field="o.complaint_mode" />
+							</div>
+						</div>
+                        <div class="row">
+							<div class="col-4">
+								Type of Complaint:
+							</div>
+							<div class="col-8">
+								<span t-field="o.complaint_type" />
+							</div>
+                        </div>
+                        <div class="row">
+							<div class="col-4">
+								Complaint Source:
+							</div>
+							<div class="col-8">
+								<span t-field="o.complaint_source" /> - <span t-field="o.complaint_source_text"/>
+							</div>
+                        </div>
+                        <div class="row">
+							<div class="col">
+								Outline of Complaint
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<span t-field="o.complaint_outline" />
+							</div>
+                        </div>
+                        <div class="row">
+							<div class="col-4">
+								Evidence:
+							</div>
+							<div class="col-8">
+								<span t-field="o.complaint_evidence" />
+							</div>
+                        </div>
+                        <div class="row">
+							<div class="col-4">
+								Witnesses:
+							</div>
+							<div class="col-8">
+								<span t-field="o.complaint_witnesses" />
+							</div>
+                        </div>
+                        <div class="row">
+							<div class="col-4">
+								Recorded By:
+							</div>
+							<div class="col-8">
+								<span t-field="o.recorded_by" />
+							</div>
+                        </div>
+                        <div class="row">
+							<div class="col">
+								<h3>Assessment</h3>
+							</div>
+                        </div>
+                        <div class="row">
+							<div class="col-4">
+								Seriousness:
+							</div>
+							<div class="col-8">
+								<span t-field="o.complaint_assessment"/>
+							</div>
+                        </div>
+                        <div class="row">
+							<div class="col">
+								Does the complaint contain allegations of:
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-4"></div>
+							<div class="col-3">
+								Stealing:
+							</div>
+							<div class="col-5">
+								<span t-if="o.stealing">&#9745;</span><span t-if="not o.stealing">&#9744;</span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-4"></div>
+							<div class="col-3">
+								Fraud:
+							</div>
+							<div class="col-5">
+								<span t-if="o.fraud">&#9745;</span><span t-if="not o.fraud">&#9744;</span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-4"></div>
+							<div class="col-3">
+								Threats and/or violence:
+							</div>
+							<div class="col-5">
+								<span t-if="o.violence">&#9745;</span><span t-if="not o.violence">&#9744;</span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-4"></div>
+							<div class="col-3">
+								Safety breaches:
+							</div>
+							<div class="col-5">
+								<span t-if="o.safety">&#9745;</span><span t-if="not o.safety">&#9744;</span>
+							</div>
+						</div>
+                        <div class="row">
+							<div class="col-4"></div>
+							<div class="col-3">
+								Discrimination:
+							</div>
+							<div class="col-5">
+								<span t-if="o.discrimination">&#9745;</span><span t-if="not o.discrimination">&#9744;</span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								Does the complaint indicate:
+							</div>
+                        </div>
+						<div class="row">
+							<div class="col-4"></div>
+							<div class="col-3">
+								Any breach of Contract/Policy:
+							</div>
+							<div class="col-5">
+								<span t-if="o.policy">&#9745;</span><span t-if="not o.policy">&#9744;</span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-4"></div>
+							<div class="col-3">
+								Any breach of the company's contract with clients:
+							</div>
+							<div class="col-5">
+								<span t-if="o.client_contract">&#9745;</span><span t-if="not o.client_contract">&#9744;</span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-4"></div>
+							<div class="col-3">
+								Refusal to follow reasonable directions:
+							</div>
+							<div class="col-5">
+								<span t-if="o.directions">&#9745;</span><span t-if="not o.directions">&#9744;</span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-4"></div>
+							<div class="col-3">
+								Unsatisfactory performance:
+							</div>
+							<div class="col-5">
+								<span t-if="o.performance">&#9745;</span><span t-if="not o.performance">&#9744;</span>
+							</div>
+						</div>
+                        <div class="row">
+							<div class="col-4"></div>
+							<div class="col-3">
+								Inappropriate behaviour:
+							</div>
+							<div class="col-5">
+								<span t-if="o.behaviour">&#9745;</span><span t-if="not o.behaviour">&#9744;</span>
+							</div>
+                        </div>
+                        <div class="row">
+							<div class="col-4"></div>
+							<div class="col-3">
+								Misuse of company property:
+							</div>
+							<div class="col-5">
+								<span t-if="o.property">&#9745;</span><span t-if="not o.property">&#9744;</span>
+							</div>
+                        </div>
+                        <div class="row">
+							<div class="col-4">
+								Is there sufficient evidence to investigate the complaint?
+							</div>
+							<div class="col-8">
+								<span t-if="o.evidence_sufficient">Yes</span><span t-if="not o.evidence_sufficient">No</span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								Does the complaint require investigation?
+							</div>
+							<div class="col-8">
+								<span t-field="o.investigation_required"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								Does the complaint have to be referred to another organisation?
+							</div>
+							<div class="col-8">
+								<span t-if="o.complaint_refer">Yes</span><span t-if="not o.complaint_refer">No</span>
+							</div>
+						</div>
+                        <div class="row">
+							<div class="col-4">
+								Investigation Plan:
+							</div>
+							<div class="col-8">
+								<span t-field="o.investigation_plan"/>
+							</div>
+						</div>
+                        <div class="row">
+							<div class="col-4">
+								Assigned to:
+							</div>
+							<div class="col-8">
+								<span t-field="o.assigned_to"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								Assessed by:
+							</div>
+							<div class="col-8">
+								<span t-field="o.assessor"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								Date assessed:
+							</div>
+							<div class="col-8">
+								<span t-field="o.assess_date"/>
+							</div>
+						</div>
+                        <div class="row">
+							<div class="col">
+								<h3>Action</h3>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								Has the complaint been substantiated?
+							</div>
+							<div class="col-8">
+								<span t-if="o.substantiated">Yes</span><span t-if="not o.substantiated">No</span>
+							</div>
+						</div>
+                        <div class="row">
+							<div class="col-4">
+								Details:
+							</div>
+							<div class="col-8">
+								<span t-field="o.action_detail"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								Issues discovered:
+							</div>
+							<div class="col-8">
+								<span t-field="o.issues"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								Action to be taken:
+							</div>
+							<div class="col-8">
+								<span t-field="o.action_taken"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								Record on Employee File:
+							</div>
+							<div class="col-8">
+								<span t-if="o.record_employee">Yes</span><span t-if="not o.record_employee">No</span>
+							</div>
+                        </div>
+                        <div class="row">
+							<div class="col-4">
+								Completed by:
+							</div>
+							<div class="col-8">
+								<span t-field="o.completed_by"/>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-4">
+								Date Closed:
+							</div>
+							<div class="col-8">
+								<span t-field="o.date_close"/>
+							</div>
+						</div>
                         <h3>Running Entries</h3>
-                        <table width="100%">
 						<t t-set="i" t-value="0"/>
                         <t t-foreach="o.message_ids" t-as="m">
 						<t t-set="i" t-value="i+1"/>
 						<t t-if="i > 1">
-							<tr><td colspan="4"><hr/></td></tr>
+							<hr/>
 						</t>	
-                        <tr>
-                        <td>Author:</td>
-                        <td><span t-field="m.author_id"/></td>
-                        <td>Date:</td>
-                        <td><span t-field="m.date"/></td>
-                        </tr>
-                        <tr>
-                        <td colspan="2">Subject:  </td>
-                        <td colspan="2"><span t-field="m.subject"/></td>
-                        </tr>
-                        <tr>
-                        <td colspan="4">Details:</td>
-                        </tr>
-                        <tr>
-                        <td colspan="4"><span t-field="m.body"/></td></tr>
+                        <div class="row">
+						<div class="col-2">
+							Author:
+						</div>
+						<div class="col-4">
+							<span t-field="m.author_id"/>
+						</div>
+						<div class="col-2">
+							Date:
+						</div>
+						<div class="col-4">
+							<span t-field="m.date"/>
+                        </div>
+						</div>
+                        <div class="row">
+                        <div class="col-3">
+							Subject:
+						</div>
+						<div class="col-9">
+							<span t-field="m.subject"/>
+						</div>
+                        </div>
+                        <div class="row">
+							<div class="col">
+								Details:
+							</div>
+						</div>
+						<div class="row">
+							<div class="col">
+								<span t-field="m.body"/>
+							</div>
+						</div>
                         </t>
-                        </table>
                         <br/><br/>
-                        <table width="100%">
-                        <tr height="40px">
-                        <td>Signature:</td>
-                        <td><hr/></td>
-                        <td>Date:</td>
-                        <td><hr/></td>
-                        </tr>
-                        
-                        </table>
+                        <div class="row">
+							<div class="col-2">
+								Signature:
+							</div>
+							<div class="col-4" style="border-bottom: 1px solid black !important">
+							</div>
+							<div class="col-2">
+								Date:
+							</div>
+							<div class="col-4" style="border-bottom: 1px solid black !important">
+							</div>
+						</div>
                     </div>
                     </t>
                 </t>
