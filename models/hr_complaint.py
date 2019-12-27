@@ -98,7 +98,7 @@ class HrComplaint(models.Model):
             ('progress', 'Investigation in progress'),
             ('wait', 'Waiting for external investigation'),
             ('unsubstantiated','Unsubstantiated'),
-            ('done', 'Done')], 'Status', required=True, readonly=True, track_visibility='onchange', copy=False, default='draft')
+            ('done', 'Done')], 'Status', required=True, track_visibility='onchange', default='draft')
 	date_eta = fields.Date('To be completed')
 	date_close = fields.Date('Date closed')
     
