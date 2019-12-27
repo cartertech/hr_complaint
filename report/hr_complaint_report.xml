@@ -118,46 +118,46 @@
 						</div>
 						<div class="row">
 							<div class="col-4"></div>
-							<div class="col-3">
+							<div class="col-4">
 								Stealing:
 							</div>
-							<div class="col-5">
+							<div class="col-4">
 								<span t-if="o.stealing">&#9745;</span><span t-if="not o.stealing">&#9744;</span>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-4"></div>
-							<div class="col-3">
+							<div class="col-4">
 								Fraud:
 							</div>
-							<div class="col-5">
+							<div class="col-4">
 								<span t-if="o.fraud">&#9745;</span><span t-if="not o.fraud">&#9744;</span>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-4"></div>
-							<div class="col-3">
+							<div class="col-4">
 								Threats and/or violence:
 							</div>
-							<div class="col-5">
+							<div class="col-4">
 								<span t-if="o.violence">&#9745;</span><span t-if="not o.violence">&#9744;</span>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-4"></div>
-							<div class="col-3">
+							<div class="col-4">
 								Safety breaches:
 							</div>
-							<div class="col-5">
+							<div class="col-4">
 								<span t-if="o.safety">&#9745;</span><span t-if="not o.safety">&#9744;</span>
 							</div>
 						</div>
                         <div class="row">
 							<div class="col-4"></div>
-							<div class="col-3">
+							<div class="col-4">
 								Discrimination:
 							</div>
-							<div class="col-5">
+							<div class="col-4">
 								<span t-if="o.discrimination">&#9745;</span><span t-if="not o.discrimination">&#9744;</span>
 							</div>
 						</div>
@@ -168,55 +168,55 @@
                         </div>
 						<div class="row">
 							<div class="col-4"></div>
-							<div class="col-3">
+							<div class="col-4">
 								Any breach of Contract/Policy:
 							</div>
-							<div class="col-5">
+							<div class="col-4">
 								<span t-if="o.policy">&#9745;</span><span t-if="not o.policy">&#9744;</span>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-4"></div>
-							<div class="col-3">
+							<div class="col-4">
 								Any breach of the company's contract with clients:
 							</div>
-							<div class="col-5">
+							<div class="col-4">
 								<span t-if="o.client_contract">&#9745;</span><span t-if="not o.client_contract">&#9744;</span>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-4"></div>
-							<div class="col-3">
+							<div class="col-4">
 								Refusal to follow reasonable directions:
 							</div>
-							<div class="col-5">
+							<div class="col-4">
 								<span t-if="o.directions">&#9745;</span><span t-if="not o.directions">&#9744;</span>
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-4"></div>
-							<div class="col-3">
+							<div class="col-4">
 								Unsatisfactory performance:
 							</div>
-							<div class="col-5">
+							<div class="col-4">
 								<span t-if="o.performance">&#9745;</span><span t-if="not o.performance">&#9744;</span>
 							</div>
 						</div>
                         <div class="row">
 							<div class="col-4"></div>
-							<div class="col-3">
+							<div class="col-4">
 								Inappropriate behaviour:
 							</div>
-							<div class="col-5">
+							<div class="col-4">
 								<span t-if="o.behaviour">&#9745;</span><span t-if="not o.behaviour">&#9744;</span>
 							</div>
                         </div>
                         <div class="row">
 							<div class="col-4"></div>
-							<div class="col-3">
+							<div class="col-4">
 								Misuse of company property:
 							</div>
-							<div class="col-5">
+							<div class="col-4">
 								<span t-if="o.property">&#9745;</span><span t-if="not o.property">&#9744;</span>
 							</div>
                         </div>
