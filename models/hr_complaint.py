@@ -118,7 +118,6 @@ class HrEmployee(models.Model):
 	
 	complaint_count = fields.Integer(compute='_compute_ccount', store=False, string='Complaints')
 	
-	@api.multi
 	def _compute_ccount(self):
 		Complaint = self.env['hr_complaint.complaint']
 		self.complaint_count = Complaint.search_count([('employee_id','=',self.id)])
