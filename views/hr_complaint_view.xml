@@ -93,7 +93,6 @@
   
 	<record model="ir.actions.act_window" id="action_complaint_form">
 		<field name="name">Complaint</field>
-		<field name="view_type">form</field>
 		<field name="res_model">hr_complaint.complaint</field>
 		<field name="view_id" ref="view_hr_complaint_form"/>
 		<field name="view_mode">form</field>
@@ -101,7 +100,6 @@
   
 	<record model="ir.actions.act_window" id="action_complaint_tree">
 		<field name="name">Complaint List</field>
-		<field name="view_type">form</field>
 		<field name="res_model">hr_complaint.complaint</field>
 		<field name="view_id" ref="view_hr_complaint_tree"/>
 		<field name="view_mode">tree,form</field>
@@ -124,7 +122,6 @@
 <!-- Add Complaint Count to Employee Form-->
  <record id="act_hr_employee_2_hr_complaint" model="ir.actions.act_window">
 		<field name="res_model">hr_complaint.complaint</field>
-		<field name="view_type">form</field>
 		<field name="name">Complaints</field>
 		<field name="view_mode">tree,form</field>
 		<field name="context">{'search_default_employee_id': [active_id]}</field>
