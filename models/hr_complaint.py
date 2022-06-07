@@ -1,29 +1,8 @@
-# -*- encoding: utf-8 -*-
-##############################################################################
-#
-#    OpenERP, Open Source Management Solution
-#    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>).
-#
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU Affero General Public License as
-#    published by the Free Software Foundation, either version 3 of the
-#    License, or (at your option) any later version.
-#
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU Affero General Public License for more details.
-#
-#    You should have received a copy of the GNU Affero General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-##############################################################################
-
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 from datetime import date
 
-from odoo import api, fields, models
-from openerp.tools.translate import _
-from openerp.tools import DEFAULT_SERVER_DATETIME_FORMAT as DF
+from odoo import _, api, fields, models, tools
+from odoo.tools.misc import DEFAULT_SERVER_DATETIME_FORMAT as DF
 
 class HrComplaint(models.Model):
 	_name = "hr_complaint.complaint"
@@ -88,9 +67,9 @@ class HrComplaint(models.Model):
 	    ('3', 'Informal Warning'),
 	    ('4', 'Record without warning'),
 	    ('5', 'Remedial'),
-	    ('6', 'No action')], 'Action to be taken', track_visibility='onchange')
-	record_employee = fields.Boolean('Record on employee file', track_visibility='onchange')
-	notes = fields.Text('Notes', track_visibility='onchange')
+	    ('6', 'No action')], 'Action to be taken', tracking=True)
+	record_employee = fields.Boolean('Record on employee file', tracking=True)
+	notes = fields.Text('Notes', tracking=True)
 	completed_by = fields.Many2one('hr.employee','Completed By')
 	state = fields.Selection([
             ('draft', 'New'),
@@ -98,7 +77,7 @@ class HrComplaint(models.Model):
             ('progress', 'Investigation in progress'),
             ('wait', 'Waiting for external investigation'),
             ('unsubstantiated','Unsubstantiated'),
-            ('done', 'Done')], 'Status', required=True, track_visibility='onchange', default='draft')
+            ('done', 'Done')], 'Status', required=True, tracking=True, default='draft')
 	date_eta = fields.Date('To be completed')
 	date_close = fields.Date('Date closed')
     
