@@ -13,18 +13,19 @@
 					/>
 				</header>
 				<sheet>
-					<group>
-					<field name="name" invisible="1"/>
-					<field name="employee_id"/>
-					<field name="complaint_date"/>
-					<field name="complaint_mode"/>
-					<field name="complaint_type"/>
-					<field name="complaint_source"/>
-					<field name="complaint_source_text"/>
-					<field name="complaint_outline"/>
-					<field name="complaint_evidence"/>
-					<field name="complaint_witnesses"/>
-					<field name="recorded_by"/>
+          <group>
+            <field name="name" invisible="1"/>
+            <field name="employee_id"/>
+            <field name="complaint_date"/>
+            <field name="complaint_mode"/>
+            <field name="complaint_type"/>
+            <field name="complaint_source"/>
+            <field name="complaint_source_text"/>
+            <field name="complaint_outline"/>
+            <field name="complaint_evidence"/>
+            <field name="complaint_witnesses"/>
+            <field name="recorded_by"/>
+          </group>
 					<notebook>
 					<page string="Assessment">
 					  <group>
@@ -66,11 +67,9 @@
 						<field name="notes"/>
 						<field name="date_close"/>
 						<field name="completed_by"/>
-						
 					  </group>
 					</page>
 					</notebook>
-					</group>
 				</sheet>
 				<div class="oe_chatter">
 				  <field name="message_follower_ids" widget="mail_followers"/>
