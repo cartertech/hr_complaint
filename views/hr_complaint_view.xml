@@ -3,7 +3,6 @@
 	<record model="ir.ui.view" id="view_hr_complaint_form">
 		<field name="name">hr_complaint.complaint.form</field>
 		<field name="model">hr_complaint.complaint</field>
-		<field name="type">form</field>
 		<field name="arch" type="xml">
 			<form string="Complaint">
 				<header>
@@ -83,14 +82,13 @@
 	<record model="ir.ui.view" id="view_hr_complaint_tree">
 		<field name="name">hr_complaint.complaint.tree</field>
 		<field name="model">hr_complaint.complaint</field>
-		<field name="type">tree</field>
 		<field name="arch" type="xml">
-			<tree string="Complaint">
+			<list string="Complaint">
 				<field name="complaint_date" string="Complaint Date"/>
 				<field name="employee_id" string="Employee"/>
 				<field name="complaint_outline" string="Complaint Outline"/>
 				<field name="state"/>
-			</tree>
+			</list>
 		</field>
 	</record>
   
@@ -105,7 +103,7 @@
 		<field name="name">Complaint List</field>
 		<field name="res_model">hr_complaint.complaint</field>
 		<field name="view_id" ref="view_hr_complaint_tree"/>
-		<field name="view_mode">tree,form</field>
+		<field name="view_mode">list,form</field>
 	</record>
 	
 	<menuitem name="Complaints" parent="hr.menu_hr_root" id="menu_complaint_hr" sequence="30"/>
@@ -126,7 +124,7 @@
  <record id="act_hr_employee_2_hr_complaint" model="ir.actions.act_window">
 		<field name="res_model">hr_complaint.complaint</field>
 		<field name="name">Complaints</field>
-		<field name="view_mode">tree,form</field>
+		<field name="view_mode">list,form</field>
 		<field name="context">{'search_default_employee_id': [active_id]}</field>
  </record>
 	
